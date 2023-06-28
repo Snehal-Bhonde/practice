@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 import 'Future&Streams/FutureBuilderEx.dart';
+import 'Future&Streams/PostApi.dart';
 import 'Future&Streams/StreamBuilder1.dart';
 import 'Future&Streams/StreamBuilder2.dart';
 
@@ -42,7 +43,8 @@ class MyApplication extends StatelessWidget {
      // home: ScrollControl(),
       //home: StreamBuilderExample(),
       //home: Futures(),
-      home: PeriodicRequester(),
+     // home: PeriodicRequester(),
+      home: PostApi(),
     );
   }
 }
