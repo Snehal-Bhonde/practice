@@ -5,6 +5,8 @@ import 'Future&Streams/FutureBuilderEx.dart';
 import 'Future&Streams/PostApi.dart';
 import 'Future&Streams/StreamBuilder1.dart';
 import 'Future&Streams/StreamBuilder2.dart';
+import 'get_api/get_api_screen.dart';
+import 'home/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -45,6 +47,7 @@ class MyApplication extends StatelessWidget {
       //home: Futures(),
      // home: PeriodicRequester(),
       home: PostApi(),
+      //home: GetScreen(),
     );
   }
 }
