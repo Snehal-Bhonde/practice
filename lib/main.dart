@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
@@ -5,10 +7,12 @@ import 'Future&Streams/FutureBuilderEx.dart';
 import 'Future&Streams/PostApi.dart';
 import 'Future&Streams/StreamBuilder1.dart';
 import 'Future&Streams/StreamBuilder2.dart';
+import 'employee/employee_screen.dart';
 import 'get_api/get_api_screen.dart';
 import 'home/home_screen.dart';
 
 void main() {
+  //HttpOverrides.global = MyHttpOverrides();
   runApp(const MyApp());
 }
 
@@ -46,8 +50,9 @@ class MyApplication extends StatelessWidget {
       //home: StreamBuilderExample(),
       //home: Futures(),
      // home: PeriodicRequester(),
-      home: PostApi(),
-      //home: GetScreen(),
+     // home: PostApi(),
+     // home: GetScreen(),
+      home: EmpListScreen(),
     );
   }
 }

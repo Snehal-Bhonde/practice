@@ -5,17 +5,6 @@ import 'dart:io';
 
 class GetRepo {
 
-  /*Stream<String> getIPAdds() async* {
-    final url = Uri.parse('https://httpbin.org/ip');
-    final httpClient = HttpClient();
-    final request = await httpClient.getUrl(url);
-    final response = await request.close();
-    final responseBody = await response.transform(utf8.decoder).join();
-    final String ip = jsonDecode(responseBody)['origin'];
-    print("ip $ip");
-    yield ip;
-  }*/
-
   Future<String> getIPAddress() async {
     final url = Uri.parse('https://httpbin.org/ip');
     final httpClient = HttpClient();

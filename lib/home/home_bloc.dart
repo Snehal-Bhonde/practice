@@ -16,7 +16,7 @@ class HomeBloc {
   final _repository = RepositoryPost();
 
   setAlbum(String title) async {
-    Album ip = await _repository.setPost(title);
+    Album ip = await _homeRepo.createAlbum(title);
     postBehavior.sink.add(ip.title);
   }
 }
