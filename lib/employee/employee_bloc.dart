@@ -5,11 +5,17 @@ import 'package:rxdart/subjects.dart';
 class EmpBloc {
   final EmpRepo _empRepo = EmpRepo();
 
-  BehaviorSubject<EmployeeList> empBehavior = BehaviorSubject();
+  BehaviorSubject<List<Data>> empBehavior = BehaviorSubject();
 
-  Stream<EmployeeList> get empStream => empBehavior.stream;
+  Stream<List<Data>> get empStream => empBehavior.stream;
 
   fetchEmpList() async {
-    empBehavior.sink.add(await _empRepo.fetchEmpList());
+    EmployeeList empList=await _empRepo.fetchEmpList();
+    if(empList.data!=null){
+      empBehavior.sink.add(empList.data!);
+    }
+    else{
+      empBehavior.sink.add([]);
+    }
   }
 }

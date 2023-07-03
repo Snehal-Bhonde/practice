@@ -25,7 +25,7 @@ class _EmpListScreenState extends State<EmpListScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: StreamBuilder<EmployeeList>(
+        body: StreamBuilder<List<Data>>(
             stream: _empBloc.empStream,
             builder: (context, snapshot) {
               if (snapshot.hasError) {
@@ -41,7 +41,7 @@ class _EmpListScreenState extends State<EmpListScreen> {
                   children: [
                     Expanded(
                       child: ListView.builder(
-                          itemCount: snapshot.data!.data!.length,
+                          itemCount: snapshot.data!.length,
                           itemBuilder: (context, index) {
                             return Container(
                               margin: EdgeInsets.all(8.0),
@@ -53,12 +53,12 @@ class _EmpListScreenState extends State<EmpListScreen> {
                                     CrossAxisAlignment.start,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
-                                      Text("ID: ${snapshot.data!.data![index].id}"),
-                                      Text("Employee Name: ${snapshot.data!.data![index].employeeName}"),
-                                      Text("Employee salary: ${snapshot.data!.data![index].employeeSalary}",
+                                      Text("ID: ${snapshot.data![index].id}"),
+                                      Text("Employee Name: ${snapshot.data![index].employeeName}"),
+                                      Text("Employee salary: ${snapshot.data![index].employeeSalary}",
                                         textAlign: TextAlign.start,
                                       ),
-                                      Text("Age : ${snapshot.data!.data![index].employeeAge}"),
+                                      Text("Age : ${snapshot.data![index].employeeAge}"),
                                     ],
                                   ),
                                 ),
