@@ -7,7 +7,9 @@ import 'Future&Streams/FutureBuilderEx.dart';
 import 'Future&Streams/PostApi.dart';
 import 'Future&Streams/StreamBuilder1.dart';
 import 'Future&Streams/StreamBuilder2.dart';
+import 'currency_conversion/currency_conv_screen.dart';
 import 'employee/employee_screen.dart';
+import 'expense_manager/expense_screen.dart';
 import 'get_api/get_api_screen.dart';
 import 'home/home_screen.dart';
 
@@ -52,7 +54,9 @@ class MyApplication extends StatelessWidget {
      // home: PeriodicRequester(),
      // home: PostApi(),
      // home: GetScreen(),
-      home: EmpListScreen(),
+     // home: EmpListScreen(),
+      //home: CurrencyConverter(),
+      home: ExpenseManager(),
     );
   }
 }
