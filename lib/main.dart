@@ -9,6 +9,7 @@ import 'Future&Streams/StreamBuilder1.dart';
 import 'Future&Streams/StreamBuilder2.dart';
 import 'currency_conversion/currency_conv_screen.dart';
 import 'employee/employee_screen.dart';
+import 'employee_get_sqflite/emp_sqf_screen.dart';
 import 'expense_manager/expense_screen.dart';
 import 'get_api/get_api_screen.dart';
 import 'home/home_screen.dart';
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
 class MyApplication extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       //home: MyHomePage(),
      // home: ScrollControl(),
       //home: StreamBuilderExample(),
@@ -56,7 +57,8 @@ class MyApplication extends StatelessWidget {
      // home: GetScreen(),
      // home: EmpListScreen(),
       //home: CurrencyConverter(),
-      home: ExpenseManager(),
+      //home: ExpenseManager(),
+      home: EmpSqfScreen(),
     );
   }
 }
