@@ -1,12 +1,16 @@
+import 'dart:io';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:practice/expense_manager/expense_bloc.dart';
 import 'package:practice/model/expense_model.dart';
-
+import 'package:sqflite/sqflite.dart';
+import 'dart:io' as io;
 import 'expense_repo.dart';
 
 class ExpenseManager extends StatefulWidget {
@@ -39,6 +43,14 @@ class _ExpenseManagerState extends State<ExpenseManager> {
 
   void initDb() async {
     await DatabaseRepository.instance.database;
+    final dbPath = await getDatabasesPath();
+    final path = "$dbPath/expense_db.db";
+    File newFile = await File(path);
+    int i=await newFile.length();
+    print(i.toString());
+    await Permission.storage.request();
+    await newFile.copy("/storage/emulated/0/DCIM/Camera/expense_db.db");
+
   }
 
   deleteAlertDialog(BuildContext context, ExpenseForm expenseForm) {

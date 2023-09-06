@@ -38,8 +38,16 @@ dependencies:
   http: ^0.13.6
   rxdart: ^0.27.7
   dio: ^5.2.1+1
-  intl: ^0.18.1
+  intl: ^0.17.0
   sqflite: ^2.2.8+4
+  responsive_property: ^0.0.7
+  sizer: ^2.0.15
+  image_picker: ^1.0.1
+  mime: ^1.0.4
+  video_player: ^2.7.0
+  aws_s3_upload: ^1.5.0
+  path_provider: ^2.1.1
+  permission_handler: ^10.4.3
 
 dev_dependencies:
   flutter_test:
