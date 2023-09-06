@@ -44,12 +44,14 @@ class _ExpenseManagerState extends State<ExpenseManager> {
   void initDb() async {
     await DatabaseRepository.instance.database;
     final dbPath = await getDatabasesPath();
+    print("dbpath => $dbPath");
     final path = "$dbPath/expense_db.db";
     File newFile = await File(path);
     int i=await newFile.length();
     print(i.toString());
     await Permission.storage.request();
-    await newFile.copy("/storage/emulated/0/DCIM/Camera/expense_db.db");
+    //await newFile.copy("/storage/emulated/0/DCIM/Camera/expense_db.db");  //android device
+    await newFile.copy("/sdcard/Download/expense_db.db");  //virtual device
 
   }
 
