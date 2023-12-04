@@ -48,6 +48,13 @@ dependencies:
   aws_s3_upload: ^1.5.0
   path_provider: ^2.1.1
   permission_handler: ^10.4.3
+  flutter_colorpicker: ^1.0.3
+  provider: ^6.0.5
+  flutter_spinkit:
+  firebase_core: ^2.17.0
+  just_audio: ^0.9.35
+  audio_session: ^0.1.16
+  get: ^4.6.5
 
 dev_dependencies:
   flutter_test:

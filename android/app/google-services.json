@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "37232655664",
+    "project_id": "practicewebapp-c9900",
+    "storage_bucket": "practicewebapp-c9900.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:37232655664:android:4ab1bdb092227a2f431cf5",
+        "android_client_info": {
+          "package_name": "com.example.practice"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcC2ec-Sl9HyHdxbbdX3Y5Wdu9MKdch_s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

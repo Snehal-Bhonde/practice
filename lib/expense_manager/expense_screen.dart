@@ -49,9 +49,13 @@ class _ExpenseManagerState extends State<ExpenseManager> {
     File newFile = await File(path);
     int i=await newFile.length();
     print(i.toString());
+    new File('/sdcard/Download/News/test.txt').create(recursive: true);
     await Permission.storage.request();
-    //await newFile.copy("/storage/emulated/0/DCIM/Camera/expense_db.db");  //android device
-    await newFile.copy("/sdcard/Download/expense_db.db");  //virtual device
+    await Permission.manageExternalStorage.request();
+   // await newFile.copy("/storage/emulated/0/DCIM/Cammera/expense_db.db");  //android device
+    //await newFile.copy("/storage/emulated/0/Download/NewDb/expense_db.db");  //android device
+    //await newFile.copy("/sdcard/Download/expense_db.db");  //virtual device
+    await newFile.copy("/sdcard/Download/News/expense_db.db");  //virtual device
 
   }
 

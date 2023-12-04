@@ -1,9 +1,16 @@
 import 'dart:io';
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:practice/list_visibility.dart';
+import 'package:practice/permissions_handling_screen.dart';
+import 'package:practice/provider/color_picker.dart';
+import 'package:practice/provider/counter_provider.dart';
+import 'package:practice/provider/provider_get_api.dart';
 import 'package:practice/responsive_screens/listview.dart';
+import 'package:practice/user_data/user_screen.dart';
+import 'package:provider/provider.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 import 'Future&Streams/FutureBuilderEx.dart';
@@ -16,13 +23,23 @@ import 'employee/employee_screen.dart';
 import 'employee_get_sqflite/emp_sqf_screen.dart';
 import 'expense_manager/expense_screen.dart';
 import 'get_api/get_api_screen.dart';
+import 'getx/counter/counter_screen.dart';
 import 'home/home_screen.dart';
 import 'responsive_screens/media_querys.dart';
 import 'slider_with_bloc/slider_screen.dart';
 
-void main() {
+Future<void> main() async {
   //HttpOverrides.global = MyHttpOverrides();
-  runApp(const MyApp());
+ // runApp(ChangeNotifierProvider<ThemeProvider>(create: (_)=>ThemeProvider(),child: MyApp()));
+  await init();
+  runApp(MyApp());
+}
+
+Future init() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp(
+  //   options: DefaultFirebaseOptions.currentPlatform,
+  // );
 }
 
 class MyApp extends StatelessWidget {
@@ -63,7 +80,7 @@ class MyApplication extends StatelessWidget {
      // home: GetScreen(),
      // home: EmpListScreen(),
       //home: CurrencyConverter(),
-      home: ExpenseManager(),
+      //home: ExpenseManager(),
       //home: EmpSqfScreen(),
       //home: MediaQueryEx(),
      // home: MediaQuerys(),
@@ -71,6 +88,14 @@ class MyApplication extends StatelessWidget {
      // home: SliderScreen(),
      // home: ListVisibility(),
      // home: ImagePage(),
+      //home: UserScreen(),
+      //home: MainScaffold(),
+     // home: CounterProvider(),
+     /* home: ChangeNotifierProvider(create: (context)=>DataClass(),
+         child:ProviderGetApiScreen(),
+      )*/
+      //home: HomePage(title: 'Counter',),
+      home: PermissionScreen(),
     );
   }
 }

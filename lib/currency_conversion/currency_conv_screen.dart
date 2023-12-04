@@ -91,10 +91,10 @@ class _CurrencyConverterState extends State<CurrencyConverter> {
                                 // onChanged: bloc.inName,
                                 onChanged: (value) {
                                   //fromCurrency=value!;print(value);
-                                  //setState(() {
+                                  setState(() {
                                     fromCurrency=value!;
                                     print(value);
-                                 // });
+                                  });
                                 },
                               );
                             }
@@ -144,10 +144,10 @@ class _CurrencyConverterState extends State<CurrencyConverter> {
                               // onChanged: bloc.inName,
                               onChanged: (value) {
                                 //fromCurrency=value!;print(value);
-                               // setState(() {
+                                setState(() {
                                   toCurrency=value!;
                                   print(value);
-                               // });
+                                });
                               },
                             );
                           }
